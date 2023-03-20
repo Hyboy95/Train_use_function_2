@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_9</title>
+</head>
+<body>
+<label for="input_arr">Nhập vào phần tử của mảng</label>
+<input type="text" id="input_arr">
+<button id="add_element" onclick="add_element()">Add</button>
+<button id="display_arr" onclick="display_arr()">Display</button>
+<button id="reset_arr" onclick="reset_arr()">Reset</button><br> <br>
+<label for="input_char">Nhập vào ký tự bất kỳ</label>
+<input type="text" id="input_char">
+<button id="check_char" onclick="check_arr()">Check</button>
+<p id="display"></p>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    let arr = [];
+    function add_element() {
+        let input = document.getElementById('input_arr').value;
+        alert(`Phần tử ${input} được thêm vào vị trí ${arr.length} của mảng`);
+        arr.push(input);
+        document.getElementById('input_arr').value = '';
+    }
+
+    function display_arr() {
+        document.getElementById('display').innerHTML = `Mảng bạn nhập vào: [${arr}]`;
+    }
+
+    function reset_arr() {
+        arr = [];
+        document.getElementById('display').innerHTML = `Mảng bạn nhập vào đã được reset`;
+    }
+
+    function check_arr() {
+        let char_value = document.getElementById('input_char').value;
+        let count = 0;
+        let check = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (char_value === arr[i]) {
+                check = true;
+                count +=1;
+            }
+        }
+        if (check) {
+            document.getElementById('result').innerHTML += `Ký tự ${char_value} xuất hiện ${count} lần trong mảng <br>`;
+        } else {
+            document.getElementById('result').innerHTML += `Ký tự ${char_value} không xuất hiện trong mảng: return -1 <br>`;
+        }
+        document.getElementById('input_char').value = '';
+    }
+</script>

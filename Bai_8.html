@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_8</title>
+</head>
+<body>
+<label for="input_arr">Nhập vào phần tử của mảng</label>
+<input type="text" id="input_arr">
+<button id="add_element" onclick="add_element()">Add</button>
+<button id="display_arr" onclick="display_arr()">Display</button>
+<button id="reset_arr" onclick="reset_arr()">Reset</button>
+<button id="reverse_arr" onclick="reverse_arr()">Reverse</button>
+<p id="display"></p>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  let arr = [];
+  function add_element() {
+    let input = +document.getElementById('input_arr').value;
+    alert(`Phần tử ${input} được thêm vào vị trí ${arr.length} của mảng`);
+    arr.push(input);
+    document.getElementById('input_arr').value = '';
+  }
+
+  function display_arr() {
+    document.getElementById('display').innerHTML = `Mảng bạn nhập vào: [${arr}]`;
+  }
+
+  function reset_arr() {
+    arr = [];
+    document.getElementById('display').innerHTML = `Mảng bạn nhập vào đã được reset`;
+  }
+
+  function reverse_arr() {
+    arr.reverse();
+    document.getElementById('result').innerHTML = `Mảng được đảo ngược: [${arr}]`;
+  }
+</script>

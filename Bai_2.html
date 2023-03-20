@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_2</title>
+</head>
+<body>
+<input type="text" id="R_circle" placeholder="Nhập vào bán kính hình tròn" oninput="calculate()">
+<p id="result"></p>
+</body>
+</html>
+<script>
+  function calculate_circle(R) {
+    let P = 2 * Math.PI * R;
+    let S = Math.PI * (R * R);
+    return `Diện tích hình tròn: ${S}(đơn vị diện tích) <br> Chu vi hình tròn: ${P} (đơn vị độ dài)`;
+  }
+  function calculate () {
+    let input = +document.getElementById('R_circle').value;
+    document.getElementById('result').innerHTML = calculate_circle(input);
+  }
+</script>

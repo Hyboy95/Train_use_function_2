@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_1</title>
+</head>
+<body>
+Bình phương của <input type="text" id="num_a" oninput="calculate()"> là <span id="result"></span>
+</body>
+</html>
+<script>
+  function square(a) {
+    return a * a;
+  }
+  function calculate() {
+      let num = +document.getElementById('num_a').value;
+      document.getElementById('result').innerHTML = square(num);
+  }
+</script>
